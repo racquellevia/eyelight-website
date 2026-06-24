@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../themes/bauhaus-1/theme.css";
+@import "../themes/bauhaus-2/theme.css";
+@import "../themes/bauhaus-3/theme.css";
+@import "../themes/bauhaus-4/theme.css";
+@import "../themes/bauhaus-5/theme.css";
+@import "../themes/miro1/theme.css";
+
+:root,
+html[data-mode="light"] {
+  --ink: #000000;
+  --paper: #f0efe6;
+  --red: #b84033;
+  --yellow: #ebb33e;
+  --blue: #2e64a9;
+  --link: #b84033;
+}
+
+html[data-mode="scary"] {
+  --ink: #e8e8e8;
+  --paper: #050505;
+  --cream: #1a1a1a;
+  --red: #ff1a1a;
+  --yellow: #cc8800;
+  --blue: #8b0000;
+  --green: #1a3d2a;
+  --salmon: #994433;
+  --link: #ff1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  @apply antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html[data-mode="scary"] body {
+  animation: scary-flicker 4s step-end infinite;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+@keyframes scary-flicker {
+  0%,
+  92%,
+  100% {
+    filter: none;
+  }
+  93% {
+    filter: brightness(1.4) contrast(1.2);
+  }
+  94% {
+    filter: brightness(0.7);
+  }
+  96% {
+    filter: hue-rotate(90deg) brightness(0.9);
+  }
+}
+
+@keyframes glitch-1 {
+  0%,
+  100% {
+    clip-path: inset(0 0 95% 0);
+    transform: translate(-2px, 0);
+  }
+  20% {
+    clip-path: inset(30% 0 40% 0);
+    transform: translate(2px, 0);
+  }
+  40% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(-1px, 0);
+  }
+  60% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(3px, 0);
+  }
+  80% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, 0);
+  }
+}
+
+@keyframes glitch-2 {
+  0%,
+  100% {
+    clip-path: inset(95% 0 0 0);
+    transform: translate(2px, 0);
+  }
+  25% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(-3px, 0);
+  }
+  50% {
+    clip-path: inset(5% 0 80% 0);
+    transform: translate(1px, 0);
+  }
+  75% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-2px, 0);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@layer components {
+  .site-shell {
+    background: var(--paper);
+  }
+
+  .site-shell--scary {
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(255, 26, 26, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(139, 0, 0, 0.15) 0%, transparent 40%);
+  }
+
+  .site-frame {
+    background: transparent;
+  }
+
+  html[data-mode="scary"] .site-frame {
+    animation: scary-shake 6s ease-in-out infinite;
+  }
+
+  @keyframes scary-shake {
+    0%,
+    96%,
+    100% {
+      transform: translate(0, 0);
+    }
+    97% {
+      transform: translate(-2px, 1px);
+    }
+    98% {
+      transform: translate(2px, -1px);
+    }
+    99% {
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  .pillar-index {
+    color: var(--ink);
+    padding-top: 0.15rem;
+  }
+
+  html[data-mode="scary"] .pillar-index {
+    color: var(--red);
+  }
+
+  .site-link {
+    @apply font-bold underline decoration-[3px] underline-offset-4 transition-colors;
+    text-decoration-color: var(--link);
+  }
+
+  .site-link:hover {
+    color: var(--red);
+  }
+
+html[data-mode="scary"] .client-block {
+  background: var(--paper);
+}
+
+  .logo-img {
+    transform: scaleY(1.06) translateY(-3px);
+    transform-origin: center;
+    transition: filter 0.3s ease;
+  }
+
+  .logo-img--scary {
+    filter: drop-shadow(0 0 8px var(--link));
+    animation: logo-glitch 2.5s steps(2) infinite;
+  }
+
+  @keyframes logo-glitch {
+    0%,
+    88%,
+    100% {
+      transform: scaleY(1.06) translateY(-3px) translate(0);
+    }
+    90% {
+      transform: scaleY(1.06) translateY(-3px) translate(-3px, 2px) skewX(-4deg);
+    }
+    92% {
+      transform: scaleY(1.06) translateY(-3px) translate(2px, -2px) skewX(3deg);
+    }
+    94% {
+      transform: scaleY(1.06) translateY(-3px) translate(-2px, 0);
+    }
+  }
+
+  .glitch {
+    position: relative;
+    display: inline-block;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+
+  .glitch::before {
+    left: 2px;
+    color: var(--red);
+    opacity: 0.85;
+    animation: glitch-1 2.5s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    left: -2px;
+    color: #00ffff;
+    opacity: 0.6;
+    animation: glitch-2 3s infinite linear alternate-reverse;
+  }
+
+  .glitch-active {
+    animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  }
+
+  @keyframes glitch-skew {
+    0% {
+      transform: skew(0deg);
+    }
+    20% {
+      transform: skew(-2deg);
+    }
+    40% {
+      transform: skew(1deg);
+    }
+    60% {
+      transform: skew(-1deg);
+    }
+    80% {
+      transform: skew(0.5deg);
+    }
+    100% {
+      transform: skew(0deg);
+    }
+  }
+
+  .scary-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    opacity: 0.35;
+  }
+
+  .scary-scanlines {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 51;
+    overflow: hidden;
+    opacity: 0.12;
+  }
+
+  .scary-scanlines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 26, 26, 0.25),
+      transparent
+    );
+    animation: scan 3s linear infinite;
+  }
+
+  .scary-blink {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  .scary-shape--ring {
+    @apply inline-block h-14 w-14 rounded-full border-[3px] border-red;
+    box-shadow: 0 0 20px rgba(255, 26, 26, 0.5);
+    animation: scary-spin 8s linear infinite;
+  }
+
+  .scary-shape--blade {
+    @apply ml-2 inline-block h-12 w-[3px] bg-red;
+    box-shadow: 0 0 10px var(--red);
+    animation: blink 1.5s step-end infinite;
+  }
+
+  @keyframes scary-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

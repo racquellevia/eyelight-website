@@ -1,0 +1,52 @@
+/* Bauhaus 1 — long-shadow color blocks on cream. Archived theme. */
+
+html[data-theme="bauhaus-1"] {
+  --ink: #000000;
+  --paper: #f2efe4;
+  --red: #d64030;
+  --yellow: #e9a33f;
+  --blue: #3a4e85;
+  --shadow: #000000;
+  --shadow-offset: 14px;
+  --shadow-offset-sm: 10px;
+  --link: #d64030;
+}
+
+html[data-theme="bauhaus-1"] .bauhaus-block {
+  display: block;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  box-shadow: calc(-1 * var(--shadow-offset)) var(--shadow-offset) 0 0 var(--shadow);
+}
+
+html[data-theme="bauhaus-1"] .bauhaus-block--sm {
+  width: 1.5rem;
+  height: 1.5rem;
+  box-shadow: calc(-1 * var(--shadow-offset-sm)) var(--shadow-offset-sm) 0 0 var(--shadow);
+}
+
+html[data-theme="bauhaus-1"] .bauhaus-block--red {
+  background: var(--red);
+}
+
+html[data-theme="bauhaus-1"] .bauhaus-block--yellow {
+  background: var(--yellow);
+}
+
+html[data-theme="bauhaus-1"] .bauhaus-block--blue {
+  background: var(--blue);
+}
+
+html[data-theme="bauhaus-1"] .bauhaus-mosaic {
+  padding-bottom: var(--shadow-offset);
+  padding-left: var(--shadow-offset);
+}
+
+html[data-theme="bauhaus-1"] .section-rule {
+  border-top: 4px solid var(--ink);
+}
+
+html[data-theme="bauhaus-1"] .client-block {
+  box-shadow: calc(-1 * var(--shadow-offset)) var(--shadow-offset) 0 0 var(--shadow);
+}

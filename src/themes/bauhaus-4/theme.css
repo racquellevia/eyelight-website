@@ -1,0 +1,203 @@
+/* Bauhaus 4 — overlapping circles, structural lines, triangle grids */
+
+html[data-theme="bauhaus-4"] {
+  --ink: #000000;
+  --paper: #f5f5f5;
+  --red: #d63e2d;
+  --yellow: #f1d34d;
+  --blue: #3056a3;
+  --link: #d63e2d;
+  --line: 3px;
+}
+
+html[data-theme="bauhaus-4"] .site-shell {
+  background-color: var(--paper);
+}
+
+html[data-theme="bauhaus-4"] .section-label {
+  letter-spacing: 0.12em;
+}
+
+html[data-theme="bauhaus-4"] .section-rule {
+  border-top: none;
+  padding-top: 0;
+  position: relative;
+}
+
+html[data-theme="bauhaus-4"] .section-rule::before {
+  content: "";
+  display: block;
+  height: var(--line);
+  margin-bottom: 2rem;
+  background: var(--ink);
+  box-shadow: 0 0.55rem 0 var(--ink);
+}
+
+html[data-theme="bauhaus-4"] .section-rule::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--line);
+  height: 2.25rem;
+  background: var(--ink);
+}
+
+html[data-theme="bauhaus-4"] .client-block {
+  box-shadow: none;
+  background: var(--paper);
+  border: var(--line) solid var(--ink);
+  position: relative;
+  overflow: visible;
+}
+
+html[data-theme="bauhaus-4"] .client-block::before {
+  content: "";
+  position: absolute;
+  top: -0.65rem;
+  right: 1.25rem;
+  width: var(--line);
+  height: 1.5rem;
+  background: var(--ink);
+}
+
+html[data-theme="bauhaus-4"] .client-block::after {
+  content: "";
+  position: absolute;
+  bottom: 0.85rem;
+  right: 0.85rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--blue) 50%, var(--ink) 50%);
+}
+
+/* Hero composition SVG */
+.b4-composition {
+  width: 11rem;
+  height: auto;
+}
+
+.b4-stroke {
+  stroke: var(--ink);
+}
+
+.b4-fill-ink {
+  fill: var(--ink);
+  color: var(--ink);
+}
+
+.b4-fill-red {
+  fill: var(--red);
+}
+
+.b4-fill-yellow {
+  fill: var(--yellow);
+}
+
+.b4-fill-blue {
+  fill: var(--blue);
+}
+
+/* Accents */
+.b4-accent {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.b4-accent--yellow {
+  border-radius: 50%;
+  background: var(--yellow);
+  border: var(--line) solid var(--ink);
+}
+
+.b4-accent--split {
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--blue) 50%, var(--ink) 50%);
+  border: var(--line) solid var(--ink);
+}
+
+.b4-accent--triangle {
+  width: 0;
+  height: 0;
+  border-left: 0.65rem solid transparent;
+  border-right: 0.65rem solid transparent;
+  border-bottom: 1.15rem solid var(--ink);
+}
+
+.b4-footer-accents {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.b4-footer-accents .b4-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+}
+
+.b4-footer-accents .b4-dot:nth-child(1) {
+  background: var(--red);
+}
+
+.b4-footer-accents .b4-dot:nth-child(2) {
+  background: var(--yellow);
+}
+
+.b4-footer-accents .b4-dot:nth-child(3) {
+  background: var(--blue);
+}
+
+.b4-hero-kicker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0.15rem;
+  border-left: var(--line) solid var(--ink);
+  padding-bottom: 0.15rem;
+}
+
+.b4-accent-slot {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.b4-accent-slot .b4-accent {
+  flex-shrink: 0;
+}
+
+.b4-pillar-card {
+  position: relative;
+}
+
+.pillar-card__head {
+  min-height: 1.5rem;
+}
+
+.pillar-card__title {
+  max-width: none;
+}
+
+html[data-theme="bauhaus-4"] .pillars-section {
+  border-top: var(--line) solid var(--ink);
+  padding-top: 2.5rem;
+}
+
+html[data-theme="bauhaus-4"] .pillars-section .pillar-card {
+  width: 100%;
+  max-width: 15rem;
+  flex-shrink: 0;
+}
+
+html[data-theme="bauhaus-4"] .pillar-card::before {
+  display: none;
+}

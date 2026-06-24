@@ -1,0 +1,385 @@
+/* Bauhaus 5 — classic poster: primary blocks, thick/thin lines, asymmetric grid */
+
+html[data-theme="bauhaus-5"] {
+  --ink: #000000;
+  --paper: #f0efe6;
+  --red: #b84033;
+  --yellow: #ebb33e;
+  --blue: #2e64a9;
+  --link: #b84033;
+  --thick: 4px;
+  --thin: 2px;
+}
+
+html[data-theme="bauhaus-5"] .site-shell {
+  background-color: var(--paper);
+}
+
+html[data-theme="bauhaus-5"] .section-label {
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+html[data-theme="bauhaus-5"] .b5-headline {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+html[data-theme="bauhaus-5"] .b5-lede {
+  font-weight: 400;
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
+}
+
+/* Header */
+html[data-theme="bauhaus-5"] .b5-header {
+  border-bottom: var(--thick) solid var(--ink);
+  position: relative;
+}
+
+html[data-theme="bauhaus-5"] .b5-header::after {
+  content: "";
+  position: absolute;
+  bottom: -0.65rem;
+  left: 0;
+  width: 2.5rem;
+  height: var(--thick);
+  background: var(--red);
+}
+
+/* Hero */
+.b5-hero {
+  display: grid;
+  gap: 2rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .b5-hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+}
+
+.b5-poster-art {
+  width: 13rem;
+  height: auto;
+  overflow: visible;
+  cursor: default;
+  outline: none;
+}
+
+@media (min-width: 1024px) {
+  .b5-poster-art {
+    width: 15rem;
+  }
+}
+
+.b5-piece {
+  transform-box: fill-box;
+  transform-origin: 0 0;
+  transition:
+    transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+}
+
+.b5-yellow-arc-poster,
+.b5-yellow-arc-chart {
+  transition: opacity 0.35s ease;
+}
+
+/* Poster layout — each group positioned at its icon coordinates */
+.b5-piece--blue-bar {
+  transform: translate(0px, 0px);
+}
+
+.b5-piece--red-circle {
+  transform: translate(58px, 20px);
+}
+
+.b5-piece--vline {
+  transform: translate(118px, 0px);
+}
+
+.b5-piece--hline {
+  transform: translate(0px, 88px);
+}
+
+.b5-piece--red-cross {
+  transform: translate(52px, 82px);
+}
+
+.b5-piece--red-arc {
+  transform: translate(198px, 8px);
+}
+
+.b5-piece--ladder {
+  transform: translate(228px, 72px);
+}
+
+.b5-piece--yellow-arc {
+  transform: translate(8px, 148px);
+}
+
+.b5-piece--red-bar {
+  transform: translate(56px, 152px);
+}
+
+.b5-piece--yellow-lines {
+  transform: translate(24px, 168px);
+}
+
+.b5-piece--vline-mid {
+  transform: translate(92px, 152px);
+}
+
+.b5-piece--yellow-block {
+  transform: translate(0px, 268px);
+}
+
+.b5-piece--blue-block {
+  transform: translate(72px, 248px);
+}
+
+.b5-piece--hline-bottom {
+  transform: translate(0px, 248px);
+}
+
+.b5-piece--vline-bottom {
+  transform: translate(210px, 248px);
+}
+
+.b5-piece--red-square {
+  transform: translate(228px, 292px);
+}
+
+.b5-piece--bottom-bar {
+  transform: translate(0px, 328px);
+}
+
+/* Chart morph */
+.b5-piece--chart-axis {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.b5-poster-art--chart .b5-piece--chart-axis {
+  opacity: 1;
+}
+
+.b5-poster-art--chart .b5-piece--chart-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.b5-poster-art--chart .b5-piece--blue-bar {
+  transform: translate(30px, 162px) scale(0.667, 1.093);
+}
+
+.b5-poster-art--chart .b5-piece--red-cross {
+  transform: translate(64px, 198px) scale(0.218, 8.2);
+}
+
+.b5-yellow-arc-chart {
+  opacity: 0;
+}
+
+.b5-poster-art--chart .b5-yellow-arc-poster {
+  opacity: 0;
+}
+
+.b5-poster-art--chart .b5-yellow-arc-chart {
+  opacity: 1;
+}
+
+.b5-poster-art--chart .b5-piece--yellow-arc {
+  transform: translate(98px, 132px);
+}
+
+.b5-poster-art--chart .b5-piece--red-bar {
+  transform: translate(132px, 156px) scale(0.857, 1.292);
+}
+
+.b5-poster-art--chart .b5-piece--blue-block {
+  transform: translate(166px, 112px) scale(0.143, 3.818);
+}
+
+.b5-poster-art--chart .b5-piece--yellow-block {
+  transform: translate(200px, 188px) scale(0.143, 1.769);
+}
+
+.b5-poster-art--chart .b5-piece--red-square {
+  transform: translate(234px, 156px) scale(0.462, 2.583);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .b5-piece {
+    transition: none;
+  }
+
+  .b5-poster-art--chart .b5-piece--chart-hide {
+    opacity: 1;
+  }
+
+  .b5-poster-art--chart .b5-piece--chart-axis {
+    opacity: 0;
+  }
+}
+
+.b5-stroke {
+  stroke: var(--ink);
+}
+
+.b5-fill-ink {
+  fill: var(--ink);
+}
+
+.b5-fill-red {
+  fill: var(--red);
+}
+
+.b5-fill-yellow {
+  fill: var(--yellow);
+}
+
+.b5-fill-blue {
+  fill: var(--blue);
+}
+
+/* Pillars */
+html[data-theme="bauhaus-5"] .pillars-section {
+  border-top: var(--thick) solid var(--ink);
+  padding-top: 2.5rem;
+}
+
+html[data-theme="bauhaus-5"] .pillars-section .pillar-card {
+  width: 100%;
+  max-width: 15rem;
+  flex-shrink: 0;
+}
+
+.pillar-card__title {
+  max-width: none;
+  font-weight: 700;
+}
+
+/* Section rules (clients, footer) */
+html[data-theme="bauhaus-5"] .section-rule {
+  border-top: var(--thick) solid var(--ink);
+  padding-top: 2.5rem;
+  position: relative;
+}
+
+html[data-theme="bauhaus-5"] .section-rule::after {
+  content: "";
+  position: absolute;
+  top: -0.55rem;
+  right: 0;
+  width: 3rem;
+  height: var(--thick);
+  background: var(--yellow);
+}
+
+/* Accents */
+.b5-accent {
+  display: block;
+  flex-shrink: 0;
+}
+
+.b5-accent--circle {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.b5-accent--semicircle {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--yellow);
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+
+.b5-accent--bar {
+  width: 0.45rem;
+  height: 1.5rem;
+  background: var(--blue);
+}
+
+.b5-accent--arc {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--yellow);
+  border-bottom-right-radius: 100%;
+}
+
+.b5-accent-slot {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Client block — overlapping rects */
+html[data-theme="bauhaus-5"] .client-block {
+  box-shadow: none;
+  background: var(--paper);
+  border: var(--thick) solid var(--ink);
+  position: relative;
+  overflow: visible;
+}
+
+html[data-theme="bauhaus-5"] .client-block::before {
+  content: "";
+  position: absolute;
+  top: -0.75rem;
+  right: 1.5rem;
+  width: 4rem;
+  height: 1.25rem;
+  background: var(--blue);
+  z-index: 0;
+}
+
+html[data-theme="bauhaus-5"] .client-block::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 1rem;
+  width: 5rem;
+  height: 0.85rem;
+  background: var(--yellow);
+  z-index: 0;
+}
+
+/* Footer */
+html[data-theme="bauhaus-5"] .b5-footer-bar {
+  height: var(--thick);
+  width: 6rem;
+  background: var(--ink);
+  margin-top: 1rem;
+}
+
+.b5-footer-shapes {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.b5-footer-shapes span:nth-child(1) {
+  width: 0.85rem;
+  height: 2rem;
+  background: var(--red);
+}
+
+.b5-footer-shapes span:nth-child(2) {
+  width: 0.85rem;
+  height: 1.25rem;
+  background: var(--blue);
+}
+
+.b5-footer-shapes span:nth-child(3) {
+  width: 0.85rem;
+  height: 1.6rem;
+  background: var(--yellow);
+}

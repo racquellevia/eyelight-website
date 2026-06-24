@@ -1,0 +1,23 @@
+{
+  "year": 2023,
+  "unit": "AQI (median annual)",
+  "source": "U.S. EPA Air Quality System — annual summary statistics (representative sample for portfolio demo)",
+  "cities": [
+    { "city": "Los Angeles", "state": "CA", "aqi": 72, "population": 3898747 },
+    { "city": "Phoenix", "state": "AZ", "aqi": 68, "population": 1608139 },
+    { "city": "Houston", "state": "TX", "aqi": 58, "population": 2304580 },
+    { "city": "Chicago", "state": "IL", "aqi": 52, "population": 2746388 },
+    { "city": "Denver", "state": "CO", "aqi": 48, "population": 715522 },
+    { "city": "Atlanta", "state": "GA", "aqi": 55, "population": 498715 },
+    { "city": "Philadelphia", "state": "PA", "aqi": 49, "population": 1584064 },
+    { "city": "Seattle", "state": "WA", "aqi": 38, "population": 737015 },
+    { "city": "Minneapolis", "state": "MN", "aqi": 42, "population": 429954 },
+    { "city": "Portland", "state": "OR", "aqi": 44, "population": 652503 },
+    { "city": "Boston", "state": "MA", "aqi": 41, "population": 675647 },
+    { "city": "Salt Lake City", "state": "UT", "aqi": 61, "population": 199723 },
+    { "city": "Detroit", "state": "MI", "aqi": 47, "population": 639111 },
+    { "city": "Baltimore", "state": "MD", "aqi": 46, "population": 565708 },
+    { "city": "Albuquerque", "state": "NM", "aqi": 43, "population": 564559 },
+    { "city": "Honolulu", "state": "HI", "aqi": 28, "population": 350964 }
+  ]
+}

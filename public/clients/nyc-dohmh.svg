@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" role="img" aria-label="NYC Department of Health and Mental Hygiene">
+  <!-- Block NYC mark (simplified) + agency name -->
+  <rect x="0" y="4" width="64" height="64" fill="#0a0a0a"/>
+  <text x="32" y="24" text-anchor="middle" fill="#fafafa" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="0.02em">N</text>
+  <text x="32" y="42" text-anchor="middle" fill="#fafafa" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="0.02em">Y</text>
+  <text x="32" y="60" text-anchor="middle" fill="#fafafa" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="0.02em">C</text>
+  <text x="80" y="30" fill="#0a0a0a" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="0.01em">NYC Department of Health</text>
+  <text x="80" y="52" fill="#0a0a0a" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="0.01em">and Mental Hygiene</text>
+</svg>

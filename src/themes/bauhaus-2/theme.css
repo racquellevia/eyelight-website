@@ -1,0 +1,360 @@
+/* Bauhaus 2 — flat geometric mosaic, no shadows or strokes */
+
+html[data-theme="bauhaus-2"] {
+  --ink: #1e2a3a;
+  --paper: #ece8dc;
+  --red: #c45c4a;
+  --yellow: #d4a03c;
+  --blue: #5a7d9a;
+  --green: #3d6b4f;
+  --salmon: #d9897a;
+  --cream: #f5f1e6;
+  --link: #c45c4a;
+}
+
+html[data-theme="bauhaus-2"] .section-rule {
+  border-top: none;
+  padding-top: 0.25rem;
+}
+
+html[data-theme="bauhaus-2"] .section-rule::before {
+  content: "";
+  display: block;
+  height: 0.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    90deg,
+    var(--red) 0 25%,
+    var(--yellow) 25% 50%,
+    var(--green) 50% 75%,
+    var(--blue) 75% 100%
+  );
+}
+
+html[data-theme="bauhaus-2"] .client-block {
+  box-shadow: none;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+html[data-theme="bauhaus-2"] .client-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--yellow);
+  border-bottom-right-radius: 100%;
+}
+
+html[data-theme="bauhaus-2"] .client-block::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--blue);
+  border-top-left-radius: 100%;
+}
+
+/* Mosaic grid */
+.b2-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 3rem);
+  grid-template-rows: repeat(3, 3rem);
+  gap: 0;
+}
+
+.b2-cell {
+  position: relative;
+  overflow: hidden;
+  width: 3rem;
+  height: 3rem;
+}
+
+.b2-shape {
+  position: absolute;
+  display: block;
+}
+
+.b2-circle {
+  border-radius: 50%;
+}
+
+.b2-fill-ink {
+  background: var(--ink);
+}
+
+.b2-fill-cream {
+  background: var(--cream);
+}
+
+.b2-fill-red {
+  background: var(--red);
+}
+
+.b2-fill-yellow {
+  background: var(--yellow);
+}
+
+.b2-fill-blue {
+  background: var(--blue);
+}
+
+.b2-fill-green {
+  background: var(--green);
+}
+
+.b2-fill-salmon {
+  background: var(--salmon);
+}
+
+.b2-bg-cream {
+  background: var(--cream);
+}
+
+.b2-bg-ink {
+  background: var(--ink);
+}
+
+.b2-bg-red {
+  background: var(--red);
+}
+
+.b2-bg-yellow {
+  background: var(--yellow);
+}
+
+.b2-bg-blue {
+  background: var(--blue);
+}
+
+.b2-bg-green {
+  background: var(--green);
+}
+
+.b2-bg-salmon {
+  background: var(--salmon);
+}
+
+.b2-arc-tl {
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 100%;
+  top: 0;
+  left: 0;
+}
+
+.b2-arc-br {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.b2-arc-tr {
+  width: 55%;
+  height: 55%;
+  border-bottom-left-radius: 100%;
+  top: 0;
+  right: 0;
+}
+
+.b2-arc-bl {
+  width: 70%;
+  height: 70%;
+  border-top-right-radius: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.b2-semicircle-t {
+  width: 100%;
+  height: 50%;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  top: 0;
+  left: 0;
+}
+
+.b2-semicircle-b {
+  width: 100%;
+  height: 55%;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  bottom: 0;
+  left: 0;
+}
+
+.b2-semicircle-l {
+  width: 52%;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 0;
+  top: 0;
+}
+
+.b2-half-l {
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.b2-half-r {
+  width: 50%;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+
+.b2-tri-tr {
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 2.2rem 2.2rem 0;
+  border-color: transparent var(--ink) transparent transparent;
+}
+
+.b2-ring {
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.b2-ring-yellow {
+  border: 0.45rem solid var(--yellow);
+  background: transparent;
+}
+
+/* Small pillar / label accents */
+.b2-accent {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.b2-accent--pillar-a {
+  background: var(--yellow);
+}
+
+.b2-accent--pillar-a::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: var(--cream);
+  left: 15%;
+  top: 15%;
+}
+
+.b2-accent--pillar-a::after {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 28%;
+  border-radius: 50%;
+  background: var(--red);
+  right: 12%;
+  bottom: 12%;
+}
+
+.b2-accent--pillar-b {
+  background: var(--green);
+}
+
+.b2-accent--pillar-b::before {
+  content: "";
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  border-radius: 50%;
+  background: var(--cream);
+  left: 14%;
+  top: 14%;
+}
+
+.b2-accent--pillar-c {
+  background: var(--blue);
+}
+
+.b2-accent--pillar-c::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 52%;
+  background: var(--cream);
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 0;
+  top: 0;
+}
+
+.b2-accent--pillar-c::after {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  border-top-left-radius: 100%;
+  background: var(--red);
+  bottom: 0;
+  right: 0;
+}
+
+.b2-footer-accents {
+  display: flex;
+  gap: 0;
+}
+
+.b2-footer-accents .b2-accent {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.b2-footer-accents .b2-accent:nth-child(1) {
+  background: var(--red);
+}
+
+.b2-footer-accents .b2-accent:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-bottom-right-radius: 100%;
+  background: var(--cream);
+}
+
+.b2-footer-accents .b2-accent:nth-child(2) {
+  background: var(--yellow);
+}
+
+.b2-footer-accents .b2-accent:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: var(--green);
+  left: 20%;
+  top: 20%;
+}
+
+.b2-footer-accents .b2-accent:nth-child(3) {
+  background: var(--ink);
+}
+
+.b2-footer-accents .b2-accent:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: var(--salmon);
+  right: 10%;
+  bottom: 10%;
+}

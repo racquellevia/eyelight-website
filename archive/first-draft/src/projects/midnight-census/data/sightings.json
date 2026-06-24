@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Midnight Census",
+    "unit": "cockroaches observed per evening walkthrough",
+    "note": "Replace this array with your own dated counts. One row per observation night."
+  },
+  "sightings": [
+    { "date": "2025-01-08", "count": 1, "room": "kitchen", "note": "Single scout by the stove." },
+    { "date": "2025-01-15", "count": 2, "room": "kitchen", "note": "A pair under the dish rack." },
+    { "date": "2025-01-22", "count": 1, "room": "bathroom", "note": "Behind the bath mat." },
+    { "date": "2025-01-29", "count": 3, "room": "kitchen", "note": "Warm week; they gathered near the sink." },
+    { "date": "2025-02-05", "count": 2, "room": "hallway", "note": "Crossing from bathroom to pantry." },
+    { "date": "2025-02-12", "count": 4, "room": "kitchen", "note": "First four-count night." },
+    { "date": "2025-02-19", "count": 5, "room": "kitchen", "note": "Peak before the deep clean." },
+    { "date": "2025-02-26", "count": 3, "room": "kitchen", "note": "Traps placed; movement slowed." },
+    { "date": "2025-03-05", "count": 2, "room": "living room", "note": "One on the rug fringe — inspiration for this piece." },
+    { "date": "2025-03-12", "count": 2, "room": "kitchen", "note": "Holding steady." },
+    { "date": "2025-03-19", "count": 1, "room": "bathroom", "note": "Lonely antennae in the mirror light." },
+    { "date": "2025-03-26", "count": 1, "room": "kitchen", "note": "Almost peaceful." },
+    { "date": "2025-04-02", "count": 0, "room": "—", "note": "Zero observed. I still don't trust it." },
+    { "date": "2025-04-09", "count": 1, "room": "hallway", "note": "One comeback tour." },
+    { "date": "2025-04-16", "count": 2, "room": "kitchen", "note": "Spring resurgence." }
+  ],
+  "steps": [
+    {
+      "id": "intro",
+      "kicker": "Domestic field notes",
+      "title": "A census of guests who never signed the lease",
+      "text": "Every few nights I walk the apartment with a notebook and a phone flashlight. This scroll is a ledger of who showed up — plotted in bright wool colors, because if you must count them, count them beautifully.",
+      "palette": "saffron",
+      "highlightIndex": null
+    },
+    {
+      "id": "first",
+      "kicker": "Week one",
+      "title": "The first antennae",
+      "text": "It started as a single silhouette by the stove — a modest integer, almost polite. I told myself it was a traveler, not a trend.",
+      "palette": "teal",
+      "highlightIndex": 0
+    },
+    {
+      "id": "gathering",
+      "kicker": "February",
+      "title": "They learned the floor plan",
+      "text": "Counts climbed through February. The kitchen became a crossroads; the hallway a highway. The chart doesn't judge — it only remembers.",
+      "palette": "ruby",
+      "highlightIndex": 6
+    },
+    {
+      "id": "rug",
+      "kicker": "Pattern interrupt",
+      "title": "Moroccan geometry, domestic chaos",
+      "text": "My grandmother's rugs taught me that repetition can hold disorder. Diamonds and stars frame the data the way a good border frames a wild center.",
+      "palette": "indigo",
+      "highlightIndex": 8
+    },
+    {
+      "id": "lull",
+      "kicker": "March",
+      "title": "A brief truce",
+      "text": "Traps, caulk, and stubborn hope. The line dips. Zero nights are the strangest — absence as data, silence as a number.",
+      "palette": "teal",
+      "highlightIndex": 12
+    },
+    {
+      "id": "now",
+      "kicker": "Present",
+      "title": "The census continues",
+      "text": "The count is never really over. Update the JSON, add your photos, watch the roaches scatter as you scroll — and tell the story your kitchen deserves.",
+      "palette": "terracotta",
+      "highlightIndex": 14
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+.midnight-census {
+  --mc-cream: #f5e6d3;
+  --mc-ink: #1a1209;
+  position: relative;
+  overflow: hidden;
+  color: var(--mc-ink);
+}
+
+.midnight-census__scrolly {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .midnight-census__scrolly {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 42vw);
+  }
+}
+
+.midnight-census__graphic {
+  position: relative;
+  z-index: 2;
+  min-height: 50vh;
+  padding: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .midnight-census__graphic {
+    position: sticky;
+    top: 5rem;
+    height: calc(100vh - 6rem);
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+  }
+}
+
+.midnight-census__steps {
+  position: relative;
+  z-index: 3;
+}
+
+.midnight-census__step {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  opacity: 0.35;
+  transform: translateY(12px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.midnight-census__step.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.midnight-census__step-inner {
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.75rem 2rem;
+  border: 2px solid rgba(26, 18, 9, 0.15);
+  background: rgba(245, 230, 211, 0.92);
+  box-shadow: 0 8px 32px rgba(26, 18, 9, 0.12);
+}
+
+@media (min-width: 900px) {
+  .midnight-census__step {
+    min-height: 100vh;
+    padding: 4rem 2.5rem 4rem 1rem;
+  }
+
+  .midnight-census__step-inner {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.midnight-census__roach-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.midnight-census__roach {
+  position: absolute;
+  will-change: transform;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.midnight-census__chart-frame {
+  width: 100%;
+  border: 3px solid var(--mc-ink);
+  padding: 0.75rem;
+  background: var(--mc-cream);
+  box-shadow: 8px 8px 0 rgba(26, 18, 9, 0.2);
+}
+
+.midnight-census__chart-rug-border {
+  padding: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #c45c26 0,
+    #c45c26 8px,
+    #e8a317 8px,
+    #e8a317 16px,
+    #1a6b6b 16px,
+    #1a6b6b 24px,
+    #9b2335 24px,
+    #9b2335 32px
+  );
+}

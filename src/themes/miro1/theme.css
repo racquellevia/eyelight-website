@@ -1,0 +1,424 @@
+/* Miro 1 — Constellations-inspired: soft washes, thin ink lines, biomorphic forms */
+
+html[data-theme="miro1"] {
+  --ink: #1a1a1a;
+  --paper: #f5f0e6;
+  --red: #c42b2b;
+  --blue: #2b5faa;
+  --yellow: #d4a82a;
+  --rose: #e8b4b0;
+  --peach: #f0c9a0;
+  --sky: #b8d4e8;
+  --link: #c42b2b;
+  --line: 1.5px;
+}
+
+html[data-theme="miro1"] .site-shell {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 20%, color-mix(in srgb, var(--sky) 35%, transparent), transparent),
+    radial-gradient(ellipse 70% 50% at 85% 70%, color-mix(in srgb, var(--rose) 30%, transparent), transparent),
+    radial-gradient(ellipse 60% 40% at 50% 95%, color-mix(in srgb, var(--peach) 25%, transparent), transparent);
+}
+
+html[data-theme="miro1"] .section-label {
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+html[data-theme="miro1"] .m1-headline {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+html[data-theme="miro1"] .m1-lede {
+  font-weight: 400;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  line-height: 1.65;
+}
+
+/* Header */
+html[data-theme="miro1"] .m1-header {
+  position: relative;
+  border-bottom: none;
+}
+
+html[data-theme="miro1"] .m1-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--line);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0,
+    var(--ink) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+  opacity: 0.35;
+}
+
+/* Hero */
+.m1-hero {
+  display: grid;
+  gap: 2rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .m1-hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+}
+
+.m1-constellation-art {
+  width: 13rem;
+  height: auto;
+  overflow: visible;
+}
+
+@media (min-width: 1024px) {
+  .m1-constellation-art {
+    width: 16rem;
+  }
+}
+
+.m1-stroke-thin {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.m1-fill-ink {
+  fill: var(--ink);
+}
+
+.m1-fill-red {
+  fill: var(--red);
+}
+
+.m1-fill-blue {
+  fill: var(--blue);
+}
+
+.m1-fill-yellow {
+  fill: var(--yellow);
+}
+
+/* Interactive constellation pieces */
+.m1-piece {
+  cursor: default;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.35, 0.64, 1),
+    filter 0.3s ease;
+}
+
+.m1-piece:hover {
+  filter: drop-shadow(0 1px 4px color-mix(in srgb, var(--ink) 12%, transparent));
+}
+
+.m1-piece--web:hover {
+  transform: translateY(-4px) rotate(-1deg);
+}
+
+.m1-piece--blob:hover {
+  transform: scale(1.08) rotate(6deg);
+  transform-origin: 68px 230px;
+}
+
+.m1-piece--red-dot:hover {
+  transform: scale(1.25);
+}
+
+.m1-piece--dots:hover {
+  transform: translate(3px, -3px);
+}
+
+.m1-piece--dots:hover circle {
+  animation: m1-dot-pulse 0.6s ease;
+}
+
+@keyframes m1-dot-pulse {
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+.m1-piece--star:hover {
+  transform: rotate(22deg) scale(1.15);
+}
+
+.m1-piece--crescent:hover {
+  transform: rotate(-18deg) translateX(4px);
+}
+
+.m1-piece--eye {
+  transform-origin: 144px 100px;
+}
+
+.m1-piece--eye:hover {
+  transform: scale(1.1);
+}
+
+.m1-piece--eye:hover .m1-lash {
+  transform: rotate(calc(var(--i, 0) * 4deg - 8deg));
+}
+
+.m1-piece--eye .m1-lash:nth-child(6) { --i: 0; }
+.m1-piece--eye .m1-lash:nth-child(7) { --i: 1; }
+.m1-piece--eye .m1-lash:nth-child(8) { --i: 2; }
+.m1-piece--eye .m1-lash:nth-child(9) { --i: 3; }
+.m1-piece--eye .m1-lash:nth-child(10) { --i: 4; }
+
+.m1-lash {
+  transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+  transform-origin: bottom center;
+}
+
+.m1-piece--eye-sm:hover {
+  transform: scale(1.2) translateY(-3px);
+}
+
+.m1-piece--triangle:hover {
+  transform: rotate(15deg) translateY(-5px);
+}
+
+.m1-piece--spiral:hover {
+  transform: rotate(90deg);
+}
+
+.m1-piece--whiskers:hover {
+  transform: translateX(-6px);
+}
+
+.m1-piece--whiskers:hover .m1-whisker {
+  transform: translateX(calc(var(--i, 0) * -2px));
+}
+
+.m1-piece--whiskers .m1-whisker:nth-child(2) { --i: 0; }
+.m1-piece--whiskers .m1-whisker:nth-child(3) { --i: 1; }
+.m1-piece--whiskers .m1-whisker:nth-child(4) { --i: 2; }
+.m1-piece--whiskers .m1-whisker:nth-child(5) { --i: 3; }
+
+.m1-whisker {
+  transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.m1-piece--cross:hover {
+  transform: rotate(45deg) scale(1.1);
+}
+
+.m1-piece--swoosh:hover {
+  transform: scaleX(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m1-piece,
+  .m1-lash,
+  .m1-whisker {
+    transition: none;
+  }
+
+  .m1-piece:hover,
+  .m1-piece--dots:hover circle {
+    transform: none;
+    filter: none;
+    animation: none;
+  }
+}
+
+/* Pillars */
+html[data-theme="miro1"] .pillars-section {
+  border-top: none;
+  padding-top: 2.5rem;
+  position: relative;
+}
+
+html[data-theme="miro1"] .pillars-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: var(--line);
+  background: var(--ink);
+  opacity: 0.2;
+  border-radius: 50%;
+  transform: scaleY(0.5);
+}
+
+html[data-theme="miro1"] .pillars-section .pillar-card {
+  max-width: 15rem;
+}
+
+html[data-theme="miro1"] .pillar-card__title {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* Accents */
+.m1-accent {
+  display: block;
+  flex-shrink: 0;
+}
+
+.m1-accent--star {
+  width: 0.9rem;
+  height: 0.9rem;
+  background: var(--blue);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.m1-accent--dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.m1-accent--crescent {
+  width: 0.85rem;
+  height: 0.85rem;
+  background: var(--blue);
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 65% 50%);
+}
+
+.m1-accent-slot {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Client block */
+html[data-theme="miro1"] .client-block {
+  background: color-mix(in srgb, var(--paper) 85%, var(--sky));
+  border: var(--line) solid color-mix(in srgb, var(--ink) 25%, transparent);
+  border-radius: 2rem 0.5rem 1.5rem 0.75rem;
+  box-shadow: none;
+  position: relative;
+  overflow: visible;
+}
+
+html[data-theme="miro1"] .client-block::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  right: 1.25rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--red);
+  z-index: 1;
+}
+
+html[data-theme="miro1"] .client-block::after {
+  content: "";
+  position: absolute;
+  bottom: -0.35rem;
+  left: 1.5rem;
+  width: 1.75rem;
+  height: 0.55rem;
+  background: var(--blue);
+  border-radius: 50%;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  z-index: 0;
+}
+
+/* Section rules */
+html[data-theme="miro1"] .section-rule {
+  border-top: none;
+  padding-top: 2.5rem;
+  position: relative;
+}
+
+html[data-theme="miro1"] .section-rule::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  height: 0.55rem;
+  background: var(--red);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+html[data-theme="miro1"] .section-rule::after {
+  content: "";
+  position: absolute;
+  top: 0.15rem;
+  left: 3.5rem;
+  right: 0;
+  height: var(--line);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0,
+    var(--ink) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  opacity: 0.25;
+}
+
+/* Footer */
+html[data-theme="miro1"] .m1-footer-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+html[data-theme="miro1"] .m1-footer-dots span {
+  display: block;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+html[data-theme="miro1"] .m1-footer-dots span:nth-child(1) {
+  width: 0.35rem;
+  height: 0.35rem;
+}
+
+html[data-theme="miro1"] .m1-footer-dots span:nth-child(2) {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--red);
+}
+
+html[data-theme="miro1"] .m1-footer-dots span:nth-child(3) {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--blue);
+}
+
+html[data-theme="miro1"] .m1-footer-line {
+  width: 4rem;
+  height: var(--line);
+  margin-top: 1rem;
+  background: var(--ink);
+  opacity: 0.2;
+  border-radius: 50%;
+}

@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #fff6ef;
+  --amber: #fec00f;
+  --rust: #c2432c;
+  --ink: #0a0a0a;
+  --font-mono: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+::selection {
+  background-color: var(--amber);
+  color: var(--ink);
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer components {
+  .retro-border {
+    @apply border border-ink/15;
+  }
+
+  .retro-card {
+    @apply border border-ink/10 bg-cream shadow-card transition-shadow duration-200;
+  }
+
+  .retro-card:hover {
+    @apply border-ink/20 shadow-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-ink bg-amber px-5 py-2.5 text-sm font-medium text-ink transition-colors;
+  }
+
+  .btn-primary:hover {
+    @apply bg-amber/90 border-ink/80;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-ink/20 bg-cream px-5 py-2.5 text-sm font-medium text-ink transition-colors;
+  }
+
+  .btn-secondary:hover {
+    @apply border-ink/40 bg-cream;
+  }
+
+  .section-label {
+    @apply text-xs font-medium uppercase tracking-widest text-ink/50;
+  }
+
+  .vis-container {
+    @apply rounded-sm border border-ink/10 bg-white shadow-soft;
+  }
+
+  .vis-container-inner {
+    @apply p-4 md:p-8;
+  }
+
+  .terminal-panel {
+    @apply rounded-sm border border-ink/10 bg-white shadow-card;
+  }
+
+  .terminal-titlebar {
+    @apply border-b border-ink/10 px-5 py-3 text-sm font-semibold text-ink;
+  }
+
+  .terminal-dot {
+    @apply hidden;
+  }
+
+  .phosphor-text {
+    @apply font-semibold text-ink;
+  }
+
+  .data-readout {
+    @apply rounded-sm border border-ink/10 bg-white/60 px-4 py-3 text-sm;
+  }
+
+  .hex-grid-accent {
+    background-image: none;
+  }
+}
+
+.vis-tooltip {
+  position: absolute;
+  pointer-events: none;
+  padding: 8px 12px;
+  font-family: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(10, 10, 10, 0.15);
+  z-index: 50;
+  max-width: 240px;
+}
+
+.vis-tooltip strong {
+  font-weight: 600;
+  color: var(--amber);
+}

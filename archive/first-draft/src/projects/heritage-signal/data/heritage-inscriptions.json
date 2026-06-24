@@ -1,0 +1,20 @@
+{
+  "source": "UNESCO World Heritage Centre — List of World Heritage Sites (aggregated new inscriptions per decade; portfolio demo subset aligned with public WHC statistics)",
+  "decades": ["1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+  "regions": [
+    "Africa",
+    "Arab States",
+    "Asia & Pacific",
+    "Europe",
+    "Latin America",
+    "North America"
+  ],
+  "values": [
+    [4, 8, 12, 18, 22, 9],
+    [2, 5, 9, 11, 14, 6],
+    [6, 14, 22, 28, 35, 18],
+    [28, 42, 38, 32, 24, 12],
+    [8, 16, 24, 30, 26, 14],
+    [5, 8, 10, 12, 9, 4]
+  ]
+}
