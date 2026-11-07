@@ -4,7 +4,7 @@ export function NycDohLogo({ className = "" }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 300 72"
+      viewBox="0 0 340 72"
       role="img"
       aria-label="NYC Department of Health and Mental Hygiene"
       className={className}
@@ -51,7 +51,7 @@ export function NycDohLogo({ className = "" }: { className?: string }) {
         y="30"
         fill="var(--ink)"
         fontFamily="Helvetica Neue, Helvetica, Arial, sans-serif"
-        fontSize="14"
+        fontSize="16.5"
         fontWeight="800"
         letterSpacing="0.01em"
       >
@@ -62,7 +62,7 @@ export function NycDohLogo({ className = "" }: { className?: string }) {
         y="52"
         fill="var(--ink)"
         fontFamily="Helvetica Neue, Helvetica, Arial, sans-serif"
-        fontSize="14"
+        fontSize="16.5"
         fontWeight="800"
         letterSpacing="0.01em"
       >

@@ -118,19 +118,32 @@ export function SitePage() {
           <ul className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:items-start">
             {site.clients.map((client) => (
               <li key={client.name}>
-                <div className="client-block px-6 py-5">
+                <a
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="client-block block px-6 py-5"
+                >
                   {client.logo === "/clients/nyc-dohmh.svg" ? (
-                    <NycDohLogo className="relative z-10 h-12 w-auto max-w-[220px] md:h-14" />
+                    <NycDohLogo className="relative z-10 h-12 w-auto md:h-14" />
                   ) : (
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={client.logoWidth}
-                      height={client.logoHeight}
-                      className="relative z-10 h-12 w-auto max-w-[220px] md:h-14"
-                    />
+                    <div className="relative z-10 flex items-center gap-3">
+                      <Image
+                        src={client.logo}
+                        alt=""
+                        width={client.logoWidth}
+                        height={client.logoHeight}
+                        className="h-12 w-auto max-w-[220px] md:h-14"
+                      />
+                      <span
+                        className="text-[11px] font-extrabold tracking-[0.01em] md:text-[13px]"
+                        style={{ color: "var(--ink)", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}
+                      >
+                        {client.name}
+                      </span>
+                    </div>
                   )}
-                </div>
+                </a>
               </li>
             ))}
           </ul>
@@ -153,9 +166,12 @@ export function SitePage() {
               <span />
               <span />
             </div>
-            <p>
-              © {new Date().getFullYear()} {site.legalName}
-            </p>
+            <div className="text-left">
+              <p className="opacity-60">Based in Boston, MA, USA</p>
+              <p>
+                © {new Date().getFullYear()} {site.legalName}
+              </p>
+            </div>
           </div>
         </footer>
       </div>

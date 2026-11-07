@@ -1,7 +1,7 @@
 export const site = {
   name: "Eyelight Labs",
   legalName: "Eyelight Labs, LLC",
-  tagline: "Data visualization studio",
+  tagline: "Data visualization & design studio",
   headlineLines: [
     "We translate complex data into visual stories",
     "people remember.",
@@ -28,7 +28,16 @@ export const site = {
       name: "NYC Department of Health and Mental Hygiene",
       shortName: "NYC Health",
       logo: "/clients/nyc-dohmh.svg",
+      url: "https://www.nyc.gov/site/doh/data/data-home.page",
       logoWidth: 200,
+      logoHeight: 56,
+    },
+    {
+      name: "IEEE VIS 2026",
+      shortName: "IEEE VIS",
+      logo: "/clients/ieeevis.svg",
+      url: "https://ieeevis.org/year/2026/welcome/",
+      logoWidth: 56,
       logoHeight: 56,
     },
   ],
